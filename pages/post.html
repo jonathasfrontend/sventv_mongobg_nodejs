@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/cardsstyle.css">
+  <link rel="shortcut icon" href="../public/img/favicon.svg" type="image/x-icon">
+  <title>Sventv</title>
+
+  <style>
+    iframe{
+      width: 400px;
+      height: auto;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="/"><img src="../public/img/logo.svg" alt=""></a>
+    </div>
+  </header>
+
+  <video src="<%= filmes.link %>"></video>
+  <iframe src="<%= filmes.link %>" frameborder="1"></iframe>
+  <iframe src="https://sinalpublico.com/player3/ch.php?canal=cinemax" style="border:2px solid red;" title="Iframe Example"></iframe>
+
+  <script src="../public/js/script.js"></script>
+</body>
+</html>

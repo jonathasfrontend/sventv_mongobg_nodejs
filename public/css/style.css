@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: #2a2a2e;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #2251d2;
+}
+body{
+  background-color: #121214;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #121214b6 20%, #1212147b 50%, #12121400 100%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 3%;
+  z-index: 2000;
+}
+header .logo{
+  width: 100px;
+  height: 100%;
+}
+header .logo img{
+  width: 100%;
+  height: 100%;
+}
+
+.background-films-banner{
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  z-index: 100;
+}
+.background-films-banner .backdrop-path{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.background-films-banner .backdrop-path img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: saturate(2) */
+}
+.background-films-banner .titles{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #121214b6 10%, #1212146b 50%, #12121400 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 3%;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+.background-films-banner .titles .title{
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.background-films-banner .titles .title h1{
+  width: 100%;
+  font-size: 4em;
+  line-height: 1.2em;
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+}
+.background-films-banner .titles .title .date{
+  display: block;
+  font-size: 0.99em;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: #ffffff;
+  text-align: justify;
+  margin: 20px 0;
+}
+.background-films-banner .titles .title p{
+  width: 100%;
+  font-size: 0.99em;
+  font-weight: 500;
+  line-height: 1.2em;
+  color: #ffffff;
+  text-align: justify;
+}
+.background-films-banner .titles .title img{
+  width: 30px;
+  height: 30px;
+}
+
+.background-films-banner .titles .poster-path{
+  width: 330px;
+  height: 470px;
+  border: 5px solid #ffffff;
+}
+.background-films-banner .titles .poster-path img{
+  width: 100%;
+  height: 100%;
+}
+
+.containe-card{
+  width: 100%;
+  height: 100%;
+  padding: 0 3%;
+  z-index: 3000;
+}
+.containe-card h1{
+  font-size: 25px;
+  margin: 5px 0;
+  font-weight: 800;
+  color: #ffffff;
+}
+.containe-card .section-cards{
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+}
+.containe-card .section-cards h1{
+  font-size: 20px;
+  margin-left: 30px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.containe-card .section-cards .carousel-filmes, .carousel-desenho, .carousel-variedades, .carousel-esportes{
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  z-index: 100;
+}
+.containe-card .section-cards .prevBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  border: none;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(-90deg, #12121400 30%, #1212146d 50%, #121214 100%);
+  cursor: pointer;
+}
+.containe-card .section-cards .nextBtn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  z-index: 200;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(90deg, #12121400 30%, #1212146d 50%, #121214 100%);
+  cursor: pointer;
+}
+.containe-card .section-cards button img{
+  width: 20px;
+  filter: invert(1);
+}

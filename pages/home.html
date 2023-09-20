@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/cardsstyle.css">
+  <link rel="shortcut icon" href="../public/img/favicon.svg" type="image/x-icon">
+  <title>Sventv</title>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="/"><img src="../public/img/logo.svg" alt=""></a>
+    </div>
+  </header>
+
+  <main class="background-films-banner">
+    <div class="backdrop-path">
+      <img src="https://image.tmdb.org/t/p/original<%- listMovies[2].backdrop_path %>" alt="">
+    </div>
+    <div class="titles">
+      <div class="title">
+        <h1><%- listMovies[2].title %></h1>
+        <span class="date">Lançamento: <%- listMovies[2].release_date %></span>
+        <p><%- listMovies[2].overview %></p>
+        <% if(listMovies[2].adult == false){ %>
+          <img src="../public/img/livre.png" alt="">
+        <% }else{ %>
+          <img src="../public/img/proibido.png" alt="">
+        <% } %>
+      </div>
+      <div class="poster-path">
+        <img src="https://image.tmdb.org/t/p/original<%- listMovies[2].poster_path %>" alt="">
+      </div>
+    </div>
+  </main>
+
+  <main class="containe-card">
+    <h1>Canais</h1>
+
+    <section class="section-cards">
+      <h1>Filmes</h1>
+      <button id="prevBtnFilmes" class="prevBtn"><img src="../public/img/prev.svg" alt=""></button>
+      <button id="nextBtnFilmes" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
+      <div class="carousel-filmes">
+        <% for(let i = 0; i < filmes.length; i++) { %>
+          <a href="/<%= filmes[i].id %>" class="card carousel-slide">
+            <img src="<%= filmes[i].image %>" alt="<%= filmes[i].title %>">
+          </a>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="section-cards">
+      <h1>Desenhos</h1>
+      <button id="prevBtnDesenho" class="prevBtn"><img src="../public/img/prev.svg" alt=""></button>
+      <button id="nextBtnDesenho" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
+      <div class="carousel-desenho">
+        <% for(let i = 0; i < desenhos.length; i++) { %>
+          <a href="/<%= desenhos[i].id %>" class="card carousel-slide">
+            <img src="<%= desenhos[i].image %>" alt="<%= desenhos[i].title %>">
+          </a>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="section-cards">
+      <h1>Variedades</h1>
+      <button id="prevBtnVariedades" class="prevBtn"><img src="../public/img/prev.svg" alt=""></button>
+      <button id="nextBtnVariedades" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
+      <div class="carousel-variedades">
+        <% for(let i = 0; i < variedades.length; i++) { %>
+          <a href="/<%= variedades[i].id %>" class="card carousel-slide">
+            <img src="<%= variedades[i].image %>" alt="<%= variedades[i].title %>">
+          </a>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="section-cards">
+      <h1>Esportes</h1>
+      <button id="prevBtnEsportes" class="prevBtn"><img src="../public/img/prev.svg" alt=""></button>
+      <button id="nextBtnEsportes" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
+      <div class="carousel-esportes">
+        <% for(let i = 0; i < espotes.length; i++) { %>
+          <a href="/<%= espotes[i].id %>" class="card carousel-slide">
+            <img src="<%= espotes[i].image %>" alt="<%= espotes[i].title %>">
+          </a>
+        <% } %>
+      </div>
+    </section>
+  </main>
+  
+  <script src="../public/js/script.js"></script>
+</body>
+</html>
