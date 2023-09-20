@@ -52,9 +52,6 @@ app.get('/:id', async (req, res) => {
   const slug = req.params.id;
 
   const filmes = await Filme.find({ _id: slug })
-  const desenhos = await Desenhos.find({ _id: slug })
-  const variedades = await Variedades.find({ _id: slug })
-  const espotes = await Esportes.find({ _id: slug })
 
   if (filmes) {
     res.render('post', { filmes })

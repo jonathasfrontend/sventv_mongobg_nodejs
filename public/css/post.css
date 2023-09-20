@@ -1,0 +1,11 @@
+.containe-iframe{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containe-iframe iframe{
+  width: 800px;
+  height: 500px;
+}

@@ -5,16 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../public/css/style.css">
   <link rel="stylesheet" href="../public/css/cardsstyle.css">
+  <link rel="stylesheet" href="../public/css/post.css">
   <link rel="shortcut icon" href="../public/img/favicon.svg" type="image/x-icon">
   <title>Sventv</title>
-
-  <style>
-    iframe{
-      width: 400px;
-      height: auto;
-    }
-  </style>
-
 </head>
 <body>
 
@@ -24,9 +17,12 @@
     </div>
   </header>
 
-  <video src="<%= filmes.link %>"></video>
-  <iframe src="<%= filmes.link %>" frameborder="1"></iframe>
-  <iframe src="https://sinalpublico.com/player3/ch.php?canal=cinemax" style="border:2px solid red;" title="Iframe Example"></iframe>
+  <main class="containe-iframe">
+    <% filmes.forEach(filmes => { %>
+      <iframe src="<%= filmes.link %>" style="border:2px solid red;" title="<%= filmes.title %>"></iframe>
+    <% }); %>
+  </main>
+
 
   <script src="../public/js/script.js"></script>
 </body>
