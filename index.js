@@ -48,13 +48,38 @@ app.get('/',async (req, res) => {
   res.render('home', { listMovies, filmes, desenhos, variedades, espotes })
 })
 
-app.get('/:id', async (req, res) => {
+app.get('/filmes/:id', async (req, res) => {
   const slug = req.params.id;
-
   const filmes = await Filme.find({ _id: slug })
-
   if (filmes) {
-    res.render('post', { filmes })
+    res.render('filmes', { filmes })
+  } else {
+    res.status(404).render('404');
+  }
+});
+app.get('/desenho/:id', async (req, res) => {
+  const slug = req.params.id;
+  const desenho = await Desenhos.find({ _id: slug })
+  if (desenho) {
+    res.render('desenho', { desenho })
+  } else {
+    res.status(404).render('404');
+  }
+});
+app.get('/variedades/:id', async (req, res) => {
+  const slug = req.params.id;
+  const variedade = await Variedades.find({ _id: slug })
+  if (variedade) {
+    res.render('variedades', { variedade })
+  } else {
+    res.status(404).render('404');
+  }
+});
+app.get('/esportes/:id', async (req, res) => {
+  const slug = req.params.id;
+  const esportes = await Esportes.find({ _id: slug })
+  if (esportes) {
+    res.render('esportes', { esportes })
   } else {
     res.status(404).render('404');
   }

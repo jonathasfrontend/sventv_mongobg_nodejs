@@ -46,7 +46,7 @@
       <button id="nextBtnFilmes" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
       <div class="carousel-filmes">
         <% for(let i = 0; i < filmes.length; i++) { %>
-          <a href="/<%= filmes[i].id %>" class="card carousel-slide">
+          <a href="/filmes/<%= filmes[i].id %>" class="card carousel-slide">
             <img src="<%= filmes[i].image %>" alt="<%= filmes[i].title %>">
           </a>
         <% } %>
@@ -59,7 +59,7 @@
       <button id="nextBtnDesenho" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
       <div class="carousel-desenho">
         <% for(let i = 0; i < desenhos.length; i++) { %>
-          <a href="/<%= desenhos[i].id %>" class="card carousel-slide">
+          <a href="/desenho/<%= desenhos[i].id %>" class="card carousel-slide">
             <img src="<%= desenhos[i].image %>" alt="<%= desenhos[i].title %>">
           </a>
         <% } %>
@@ -72,7 +72,7 @@
       <button id="nextBtnVariedades" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
       <div class="carousel-variedades">
         <% for(let i = 0; i < variedades.length; i++) { %>
-          <a href="/<%= variedades[i].id %>" class="card carousel-slide">
+          <a href="/variedades/<%= variedades[i].id %>" class="card carousel-slide">
             <img src="<%= variedades[i].image %>" alt="<%= variedades[i].title %>">
           </a>
         <% } %>
@@ -85,7 +85,7 @@
       <button id="nextBtnEsportes" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
       <div class="carousel-esportes">
         <% for(let i = 0; i < espotes.length; i++) { %>
-          <a href="/<%= espotes[i].id %>" class="card carousel-slide">
+          <a href="/esportes/<%= espotes[i].id %>" class="card carousel-slide">
             <img src="<%= espotes[i].image %>" alt="<%= espotes[i].title %>">
           </a>
         <% } %>
