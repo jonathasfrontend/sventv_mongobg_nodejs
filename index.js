@@ -27,10 +27,17 @@ app.set('view engine', 'html');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, '/pages'));
 
-app.get('/',async (req, res) => {
+app.get('/', async (req, res) => {
+  try {
+    const [moviesResponse, filmes, desenhos, variedades, esportes] = await Promise.all([
+      axios.get(process.env.LINK_MOVIES_BANNERS),
+      Filme.find(),
+      Desenhos.find(),
+      Variedades.find(),
+      Esportes.find(),
+    ]);
 
-  const movies = await axios.get(process.env.LINK_MOVIES_BANNERS);
-  const listMovies = movies.data.results.map(val => ({
+    const listMovies = moviesResponse.data.results.map(val => ({
       id: val._id,
       adult: val.adult,
       backdrop_path: val.backdrop_path,
@@ -38,15 +45,15 @@ app.get('/',async (req, res) => {
       title: val.title,
       poster_path: val.poster_path,
       release_date: formatDate(val.release_date),
-  }));
+    }));
 
-  const filmes = await Filme.find()
-  const desenhos = await Desenhos.find()
-  const variedades = await Variedades.find()
-  const espotes = await Esportes.find()
+    res.render('home', { listMovies, filmes, desenhos, variedades, esportes });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
 
-  res.render('home', { listMovies, filmes, desenhos, variedades, espotes })
-})
 
 app.get('/filmes/:id', async (req, res) => {
   const slug = req.params.id;

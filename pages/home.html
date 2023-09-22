@@ -18,21 +18,21 @@
 
   <main class="background-films-banner">
     <div class="backdrop-path">
-      <img src="https://image.tmdb.org/t/p/original<%- listMovies[2].backdrop_path %>" alt="">
+      <img src="https://image.tmdb.org/t/p/original<%- listMovies[1].backdrop_path %>" alt="">
     </div>
     <div class="titles">
       <div class="title">
-        <h1><%- listMovies[2].title %></h1>
-        <span class="date">Lançamento: <%- listMovies[2].release_date %></span>
-        <p><%- listMovies[2].overview %></p>
-        <% if(listMovies[2].adult == false){ %>
+        <h1><%- listMovies[1].title %></h1>
+        <span class="date">Lançamento: <%- listMovies[1].release_date %></span>
+        <p><%- listMovies[1].overview %></p>
+        <% if(listMovies[1].adult == false){ %>
           <img src="../public/img/livre.png" alt="">
         <% }else{ %>
           <img src="../public/img/proibido.png" alt="">
         <% } %>
       </div>
       <div class="poster-path">
-        <img src="https://image.tmdb.org/t/p/original<%- listMovies[2].poster_path %>" alt="">
+        <img src="https://image.tmdb.org/t/p/original<%- listMovies[1].poster_path %>" alt="">
       </div>
     </div>
   </main>
@@ -84,9 +84,9 @@
       <button id="prevBtnEsportes" class="prevBtn"><img src="../public/img/prev.svg" alt=""></button>
       <button id="nextBtnEsportes" class="nextBtn"><img src="../public/img/next.svg" alt=""></button>
       <div class="carousel-esportes">
-        <% for(let i = 0; i < espotes.length; i++) { %>
-          <a href="/esportes/<%= espotes[i].id %>" class="card carousel-slide">
-            <img src="<%= espotes[i].image %>" alt="<%= espotes[i].title %>">
+        <% for(let i = 0; i < esportes.length; i++) { %>
+          <a href="/esportes/<%= esportes[i].id %>" class="card carousel-slide">
+            <img src="<%= esportes[i].image %>" alt="<%= esportes[i].title %>">
           </a>
         <% } %>
       </div>
