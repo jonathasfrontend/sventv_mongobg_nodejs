@@ -7,9 +7,6 @@ const Filme = require('./models/filmes')
 const Desenhos = require('./models/desenhos')
 const Variedades = require('./models/variedades')
 const Esportes = require('./models/esports')
-// const uuid = require('uuid');
-// const linkify = require('linkifyjs');
-// const Noticias = require('./models/noticias')
 
 function formatDate(dateString) {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -53,7 +50,6 @@ app.get('/', async (req, res) => {
     res.status(500).send('Erro interno do servidor');
   }
 });
-
 
 app.get('/filmes/:id', async (req, res) => {
   const slug = req.params.id;
