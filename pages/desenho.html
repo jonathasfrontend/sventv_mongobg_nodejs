@@ -19,7 +19,7 @@
 
   <main class="containe-iframe">
     <% desenho.forEach(desenho => { %>
-      <iframe src="<%= desenho.link %>" scrolling=no allow="encrypted-media" title="<%= desenho.title %>"></iframe>
+      <iframe src="<%= desenho.link %>" scrolling=no allow="encrypted-media" title="<%= desenho.title %>" allowFullScreen></iframe>
     <% }); %>
   </main>
 
