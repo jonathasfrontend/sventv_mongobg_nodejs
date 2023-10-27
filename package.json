@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon index.js"
   },
@@ -19,10 +20,12 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "express-session": "^1.17.3",
     "linkifyjs": "^4.1.1",
     "mercadopago": "^1.5.16",
     "moment": "^2.29.4",
-    "mongoose": "^7.3.4"
+    "mongoose": "^7.3.4",
+    "prisma": "^5.4.2"
   }
 }

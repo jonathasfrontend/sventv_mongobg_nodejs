@@ -88,7 +88,35 @@ app.get('/esportes/:id', async (req, res) => {
   }
 });
 
-mongoose.connect('mongodb+srv://root:dFrPbwloK4qEAnKy@cluster0.xvdlp.mongodb.net/tvchannels?retryWrites=true&w=majority')
+app.get('/cadastrar', (req, res)=>{
+  res.render('form')
+})
+
+app.post('/cadlink', async (req, res) => {
+  try {
+    // Extraia os dados do corpo da requisição
+    const { title, link, image } = req.body;
+
+    // Crie um novo objeto de Esportes com os dados fornecidos
+    const push = new Esportes({
+      title,
+      link,
+      image,
+    });
+
+    // Salve o novo esporte no banco de dados
+    const esporteSalvo = await push.save();
+
+    // Redirecione ou envie uma resposta de sucesso
+    res.redirect(`/cadastrar`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).render('erro'); // Trate erros de maneira apropriada
+  }
+});
+
+// mongoose.connect('mongodb+srv://root:dFrPbwloK4qEAnKy@cluster0.xvdlp.mongodb.net/tvchannels?retryWrites=true&w=majority')
+mongoose.connect('mongodb://uafricriq2tv3mzaadgq:bFM5qSXyjy4cjLwbJaq@bdyu84sluwtmytaphic6-mongodb.services.clever-cloud.com:2023/bdyu84sluwtmytaphic6')
 .then(()=>{console.log("Banco de dados conectado!")})
 .catch(()=>{console.log("Falha ao conectar com o banco!")});
 
